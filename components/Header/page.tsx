@@ -43,8 +43,23 @@ const Header = () => {
                 {/* Desktop Buttons */}
                 <div className="hidden lg:flex items-center gap-4">
                   <div className="flex items-center gap-2 cursor-pointer">
-                    <Image src="/flags/en.png" alt="flag" width={24} height={24} />
-                    <Image src="/icons/arrow-down.svg" alt="arrow" width={12} height={12} />
+                    <div className="relative w-6 h-6"> {/* 24px = w-6 h-6 */}
+                      <Image
+                        src="/flags/en.png"
+                        alt="flag"
+                        fill
+                        className="object-contain"
+                        sizes="24px"
+                      />
+                    </div>
+                    <div className="relative w-3 h-3"> {/* 12px × 12px */}
+                      <Image
+                        src="/icons/arrow-down.svg"
+                        alt="arrow"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
 
                   <div className="flex gap-4">
@@ -69,7 +84,7 @@ const Header = () => {
                   />
                 </div>
               </div>
-              <div className='w-full flex justify-center items-center'>
+              <div className='w-full flex justify-end items-center'>
                 {/* Desktop Nav Links */}
                 <nav className="hidden lg:flex items-center gap-6 py-2">
                   {navLinks.map((link) => (

@@ -1,10 +1,100 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "FrutigerLTStd";
+    src: url("/fonts/FrutigerLTStd-Light.woff2") format("woff2"),
+       url("/fonts/FrutigerLTStd-Light.woff") format("woff"),
+       url("/fonts/FrutigerLTStd-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "FrutigerLTStd";
+    src: url("/fonts/FrutigerLTStd-Roman.woff2") format("woff2"),
+       url("/fonts/FrutigerLTStd-Roman.woff") format("woff"),
+       url("/fonts/FrutigerLTStd-Roman.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "FrutigerLTStd";
+    src: url("/fonts/FrutigerLTStd-Bold.woff2") format("woff2"),
+       url("/fonts/FrutigerLTStd-Bold.woff") format("woff"),
+       url("/fonts/FrutigerLTStd-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "FrutigerLTStd";
+    src: url("/fonts/FrutigerLTStd-Black.woff2") format("woff2"),
+       url("/fonts/FrutigerLTStd-Black.woff") format("woff"),
+       url("/fonts/FrutigerLTStd-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
 
-header.header-fix {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* Font For Arabic Lang */
+@font-face {
+    font-family: "FrutigerLTArabic";
+    src: url("/fonts/frutiger-arabic/frutiger_lt_arabic_45_light.woff2") format("woff2"),
+       url("/fonts/frutiger-arabic/frutiger_lt_arabic_45_light.woff") format("woff");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "FrutigerLTArabic";
+    src: url("/fonts/frutiger-arabic/frutiger_lt_arabic_55_roman.woff2") format("woff2"),
+       url("/fonts/frutiger-arabic/frutiger_lt_arabic_55_roman.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "FrutigerLTArabic";
+    src: url("/fonts/frutiger-arabic/frutiger_lt_arabic_65_bold.woff2") format("woff2"),
+       url("/fonts/frutiger-arabic/frutiger_lt_arabic_65_bold.woff") format("woff");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "FrutigerLTArabic";
+    src: url("/fonts/frutiger-arabic/frutiger_lt_arabic_75_black.woff2") format("woff2"),
+       url("/fonts/frutiger-arabic/frutiger_lt_arabic_75_black.woff") format("woff");
+    font-weight: 900;
+}
+
+:root{
+    --background: #030511;
+}
+body{
+    background: var(--background);
+    font-family: "FrutigerLTStd";
+    font-size: 16px;
+}
+html[lang="ar"] body{
+    font-family: "FrutigerLTArabic", sans-serif;
+}
+.gradient_border_mask:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(251, 192, 21, 1) 0%, rgba(230, 114, 37, 1) 100%);
+    -webkit-mask-image: url(/images/service-shape.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: url(/images/service-shape.svg);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    z-index: -1;
+    transition: all .3s 
+    ease-in-out;
+}
+.mask-image {
+    -webkit-mask-image: url(/images/service-shape.svg);
+    mask-image: url(/images/service-shape.svg);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-position: right bottom;
+    mask-position: right bottom;
 }
