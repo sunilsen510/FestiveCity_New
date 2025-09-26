@@ -9,6 +9,7 @@ const cardData = [
       "We provide comprehensive party setup services, including venu...",
     image: "/images/service1.png",
     link: "/en/services#test-9",
+    location: "Khobar (Al-Khobar)",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const cardData = [
       "We provide comprehensive party setup services, including venu...",
     image: "/images/service2.png",
     link: "/en/services#test-10",
+    location: "Khobar (Al-Khobar)",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const cardData = [
       "We provide comprehensive party setup services, including venu...",
     image: "/images/service3.png",
     link: "/en/services#test-11",
+    location: "Khobar (Al-Khobar)",
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const cardData = [
       "We provide comprehensive party setup services, including venu...",
     image: "/images/service-in4.png",
     link: "/en/services#test-12",
+    location: "Khobar (Al-Khobar)",
   },
 ];
 

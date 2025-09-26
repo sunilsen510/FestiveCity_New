@@ -98,3 +98,28 @@ html[lang="ar"] body{
     -webkit-mask-position: right bottom;
     mask-position: right bottom;
 }
+
+/* swipper slider */
+
+.testimonials_slide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #E67225;
+    width: 40px;
+}
+.testimonials_slide .swiper-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 8px;
+    background-color: #FCF0E8;
+    border-radius: 20px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    opacity: 1;
+}
+.testimonials_slide .swiper-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 8px;
+    background-color: #FCF0E8;
+    border-radius: 20px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    opacity: 1;
+}
