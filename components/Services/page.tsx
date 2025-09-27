@@ -43,13 +43,15 @@ const cardData = [
 const Services = () => {
   return (
     <>
-    <FeaturedServices
-      title="Featured"
-      subtitle="Services"
-      description="Festival City caters for all your festive occasion with a complete line up of state of the art lighting, sound stage, LED, and effects. All for very reasonable prices."
-      cardData={cardData}
-    />
-     
+    <div>
+      <FeaturedServices
+        title="Featured"
+        subtitle="Services"
+        description="Festival City caters for all your festive occasion with a complete line up of state of the art lighting, sound stage, LED, and effects. All for very reasonable prices."
+        cardData={cardData}
+        showBackground={true}
+      />
+    </div>
     </>
   );
 };

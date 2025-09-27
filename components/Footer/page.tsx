@@ -5,53 +5,6 @@ const Footer = () => {
   return (
     <>
       <footer>
-      {/* Top Social Links */}
-      <div className="px-4">
-        <div className="max-w-1296 mx-auto w-full">
-          <ul className="grid grid-cols-8">
-            {/* Social Link Template */}
-            {[
-              {
-                name: "Whatsapp",
-                href: "https://api.whatsapp.com/send/?phone=966537039235&type=phone_number&app_absent=0",
-                icon: "/social-icon/whatsapp.svg",
-              },
-              { name: "Facebook", href: "https://facebook.com", icon: "/social-icon/facebook.svg" },
-              { name: "Twitter", href: "https://twitter.com", icon: "/social-icon/twitter.svg" },
-              { name: "Snapchat", href: "https://snapchat.com", icon: "/social-icon/snapchat.svg" },
-              { name: "Linkedin", href: "https://linkedin.com", icon: "/social-icon/linkedin.svg" },
-              { name: "Instagram", href: "https://instagram.com", icon: "/social-icon/instagram.svg" },
-              { name: "TikTok", href: "https://tiktok.com", icon: "/social-icon/tiktok.svg" },
-              { name: "Youtube", href: "https://youtube.com", icon: "/social-icon/youtube.svg" },
-            ].map((item, idx) => (
-             <li
-      key={item.name}
-      className={`border-t border-white border-opacity-20 ${idx === 0 ? "border-t-0" : ""}`} // pehle li ka border remove
-    >
-                <a
-                  title={item.name}
-                  className="flex items-center justify-center text-white text-[15px] leading-[20px] gap-1.5 py-3.5 md:py-[22px] ltr:border-r rtl:border-l border-white border-opacity-20"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={item.href}
-                >
-                  <span className="w-6 h-6 flex items-center justify-center">
-                    <Image
-                      alt={item.name}
-                      loading="lazy"
-                      width={24}
-                      height={24}
-                      className="shadow-shadow-5"
-                      src={item.icon}
-                    />
-                  </span>
-                  <span className="hidden md:inline-block">{item.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
 
       {/* Middle Section */}
       <div className="bg-secondary-700 px-4 py-[70px]">
