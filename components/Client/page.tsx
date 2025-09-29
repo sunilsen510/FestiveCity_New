@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 import SwipperSlider from "../Swipper/page";
 
 interface ClientProps {
@@ -16,6 +19,23 @@ const Client: React.FC<ClientProps> = ({
   subtitle = "Testimonials",
   label = "Testimonials",
 }) => {
+  // Animation variants
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const staggerParent: Variants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
   return (
     <section className="relative w-full h-auto overflow-hidden">
       {/* Background Video */}
@@ -30,14 +50,23 @@ const Client: React.FC<ClientProps> = ({
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay (Optional: Dark overlay for better readability) */}
+      {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-[#040A1D] bg-opacity-90 z-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-8 py-20 text-center cursor-pointer">
-        {/* tags */}
+      <motion.div
+        className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-8 py-20 text-center cursor-pointer"
+        variants={staggerParent}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {/* Label */}
         {showLabel && (
-          <div className="max-w-[200px] cursor-pointer min-h-[44px] flex items-center justify-center gap-3 rounded-full px-5 py-3 bg-transparent text-yellow-color border border-primary">
+          <motion.div
+            variants={fadeUp}
+            className="max-w-[200px] cursor-pointer min-h-[44px] flex items-center justify-center gap-3 rounded-full px-5 py-3 bg-transparent text-yellow-color border border-primary"
+          >
             <div className="flex items-center justify-center">
               <Link
                 href="/"
@@ -52,35 +81,43 @@ const Client: React.FC<ClientProps> = ({
                 />
               </Link>
             </div>
-            {/* Label */}
             <span className="text-[18px] font-normal text-white leading-none">
               {label}
             </span>
-          </div>
+          </motion.div>
         )}
 
         {/* Title */}
-        <h2 className="text-[65px] mt-[10px] font-bold text-white leading-none">
+        <motion.h2
+          variants={fadeUp}
+          className="text-[65px] mt-[10px] font-bold text-white leading-none"
+        >
           <span className="text-yellow-color">{title} </span>
           <span className="whitespace-pre-line">{subtitle}</span>
-        </h2>
+        </motion.h2>
 
         {/* Description */}
-        <p className="max-w-[969px] text-[18px] font-normal text-white leading-7">
+        <motion.p
+          variants={fadeUp}
+          className="max-w-[969px] text-[18px] font-normal text-white leading-7"
+        >
           Festival City caters for all your festive occasion with a complete
           line up of state of the art lighting, sound stage, LED, and effects.
           All for very reasonable prices.
-        </p>
+        </motion.p>
 
         {/* Swipper Slider */}
-        <div className="w-full mt-12">
+        <motion.div variants={fadeUp} className="w-full mt-12">
           <SwipperSlider />
-        </div>
+        </motion.div>
 
-        {/* Top Social Links */}
-        <div className="w-full mt-12">
+        {/* Social Links */}
+        <motion.div variants={fadeUp} className="w-full mt-12">
           <div className="max-w-1296 mx-auto w-full">
-            <ul className="grid grid-cols-8 gap-[30px]">
+            <motion.ul
+              className="grid grid-cols-8 gap-[30px]"
+              variants={staggerParent}
+            >
               {[
                 {
                   name: "Whatsapp",
@@ -94,12 +131,11 @@ const Client: React.FC<ClientProps> = ({
                 { name: "Instagram", href: "https://instagram.com", icon: "/social-icon/instagram.svg" },
                 { name: "TikTok", href: "https://tiktok.com", icon: "/social-icon/tiktok.svg" },
                 { name: "Youtube", href: "https://youtube.com", icon: "/social-icon/you-tube.svg" },
-              ].map((item, idx) => (
-                <li
+              ].map((item) => (
+                <motion.li
                   key={item.name}
-                  className={`border border-white border-opacity-20 rounded-[10px] hover:bg-yellow/10 hover:border-yellow hover:shadow-md transition-all duration-300  ${
-                    idx === 0 ? "border-t" : ""
-                  }`}
+                  variants={fadeUp}
+                  className="border-white-default transition-all duration-300 opacity-20"
                 >
                   <a
                     title={item.name}
@@ -120,12 +156,12 @@ const Client: React.FC<ClientProps> = ({
                     </span>
                     <span className="hidden md:inline-block">{item.name}</span>
                   </a>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

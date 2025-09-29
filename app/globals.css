@@ -126,3 +126,42 @@ html[lang="ar"] body{
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
     display: none;
 }
+
+/* default: white border */
+.border-white-default {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Default semi-transparent white border */
+.border-white-default {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden; /* important for rounded corners */
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover gradient + shadow */
+.border-white-default:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover full element */
+  padding: 1px; /* thickness of border */
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(251,192,21,1) 0%, rgba(230,114,37,1) 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.border-white-default:hover {
+  box-shadow: 0 4px 12px rgba(251, 192, 21, 0.5),
+              0 2px 6px rgba(230, 114, 37, 0.5);
+}

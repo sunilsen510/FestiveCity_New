@@ -104,7 +104,7 @@ const SwipperSlider = () => {
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="gradient_hover_border mob_gradient_border relative rounded-lg p-[1px] group mob-shadow-peach-custom sm:hover:shadow-peach-custom">
+              <div className="border-white-default  relative rounded-lg p-[1px] group  sm:hover:border-white-default">
                 <div className="px-5 py-[30px] bg-[#FFEBE6] bg-opacity-5 rounded-lg">
                   {/* Top Section */}
                   <div className="flex justify-between items-center mb-5">
