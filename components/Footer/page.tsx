@@ -139,7 +139,7 @@ const Footer = () => {
                         icon: "/icons/ylocation.svg",
                         links: [
                           {
-                            text: "KSA",
+                            text: "KSA - Jeddah - Faisaliyah District",
                             href: "https://www.google.com/maps/search/?api=1&query=KSA",
                           },
                         ],
