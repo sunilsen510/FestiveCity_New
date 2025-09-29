@@ -123,3 +123,6 @@ html[lang="ar"] body{
     margin-right: 5px !important;
     opacity: 1;
 }
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
+    display: none;
+}

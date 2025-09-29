@@ -31,10 +31,10 @@ const Client: React.FC<ClientProps> = ({
       </video>
 
       {/* Overlay (Optional: Dark overlay for better readability) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#040A1D] bg-opacity-50 z-0"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[#040A1D] bg-opacity-90 z-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-8 py-20 px-4 text-center">
+      <div className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-8 py-20 text-center cursor-pointer">
         {/* tags */}
         {showLabel && (
           <div className="max-w-[200px] cursor-pointer min-h-[44px] flex items-center justify-center gap-3 rounded-full px-5 py-3 bg-transparent text-yellow-color border border-primary">
@@ -78,9 +78,9 @@ const Client: React.FC<ClientProps> = ({
         </div>
 
         {/* Top Social Links */}
-        <div className="px-4 mt-12">
+        <div className="w-full mt-12">
           <div className="max-w-1296 mx-auto w-full">
-            <ul className="grid grid-cols-8">
+            <ul className="grid grid-cols-8 gap-[30px]">
               {[
                 {
                   name: "Whatsapp",
@@ -93,27 +93,27 @@ const Client: React.FC<ClientProps> = ({
                 { name: "Linkedin", href: "https://linkedin.com", icon: "/social-icon/linkedin.svg" },
                 { name: "Instagram", href: "https://instagram.com", icon: "/social-icon/instagram.svg" },
                 { name: "TikTok", href: "https://tiktok.com", icon: "/social-icon/tiktok.svg" },
-                { name: "Youtube", href: "https://youtube.com", icon: "/social-icon/youtube.svg" },
+                { name: "Youtube", href: "https://youtube.com", icon: "/social-icon/you-tube.svg" },
               ].map((item, idx) => (
                 <li
                   key={item.name}
-                  className={`border-t border-white border-opacity-20 ${
-                    idx === 0 ? "border-t-0" : ""
+                  className={`border border-white border-opacity-20 rounded-[10px] hover:bg-yellow/10 hover:border-yellow hover:shadow-md transition-all duration-300  ${
+                    idx === 0 ? "border-t" : ""
                   }`}
                 >
                   <a
                     title={item.name}
-                    className="flex items-center justify-center text-white text-[15px] leading-[20px] gap-1.5 py-3.5 md:py-[22px] ltr:border-r rtl:border-l border-white border-opacity-20"
+                    className="flex items-center justify-center text-white text-[15px] leading-[20px] gap-1.5 py-3.5 px-3 md:py-[22px] ltr:border-r rtl:border-l border-white border-opacity-20"
                     target="_blank"
                     rel="noopener noreferrer"
                     href={item.href}
                   >
-                    <span className="w-6 h-6 flex items-center justify-center">
+                    <span className="w-9 h-9 flex items-center justify-center">
                       <Image
                         alt={item.name}
                         loading="lazy"
-                        width={24}
-                        height={24}
+                        width={34}
+                        height={34}
                         className="shadow-shadow-5"
                         src={item.icon}
                       />

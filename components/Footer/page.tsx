@@ -28,14 +28,14 @@ const Footer = () => {
                     <div className="relative sm:max-w-[334px] lg:max-w-full">
                       <input
                         autoComplete="off"
-                        className="bg-input-bg border border-primary-50 border-opacity-10 text-gray-neutral-300 w-full outline-none leading-[24px] py-2.5 px-4 rounded-lg placeholder-gray-neutral-300 ltr:pr-14 rtl:pl-14"
+                        className="bg-transparent border border-primary-50  text-gray-neutral-300 w-full outline-none leading-[24px] py-2.5 px-4 rounded-lg placeholder-gray-neutral-300 ltr:pr-14 rtl:pl-14"
                         placeholder="Enter your email here"
                         type="text"
                         name="email"
                       />
                       <button
                         type="submit"
-                        className="absolute ltr:right-0 rtl:left-0 top-0 w-[44px] h-[44px] flex items-center justify-center"
+                        className="absolute top-0 right-0 w-[44px] h-[44px] flex items-center justify-center"
                       >
                         <Image
                           alt="Right Arrow"
@@ -106,7 +106,7 @@ const Footer = () => {
                   ].map((section) => (
                     <div key={section.label}>
                       <div className="flex items-center gap-2.5 mb-2.5">
-                        <Image alt={section.label} width={18} height={18} src={section.icon} />
+                        <Image alt={section.label} width={18} height={18} src={section.icon} className='hover:fill-yellow-500 cursor-pointer' />
                         <span className="text-gray-neutral-300 text-sm font-bold">{section.label}</span>
                       </div>
                       <div>
@@ -122,7 +122,7 @@ const Footer = () => {
               </div>
 
               {/* Share Experience */}
-              <div className="md:flex-1 p-[1px] gradient_border20 relative z-[1]">
+              <div className="md:flex-1 p-[1px] gradient_border20 relative z-[1] mob-shadow-peach-custom sm:hover:shadow-peach-custom border rounded-[20px]">
                 <div className="bg-secondary-700 rounded-[20px] px-5 pt-5 overflow-hidden">
                   <h5 className="text-xl leading-6 text-gray-neutral-50 font-bold mb-2.5">Share Your Experience</h5>
                   <p className="text-gray-neutral-50 text-sm leading-5 mb-5">
@@ -131,6 +131,16 @@ const Footer = () => {
                   <button className="bg-transparent text-primary leading-[22px] font-normal rounded-lg py-2.5 px-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 relative overflow-hidden before:absolute before:top-0 before:left-1/2 before:h-full before:w-0 before:bg-black before:opacity-5 before:transition-all before:duration-300 after:absolute after:top-0 after:right-1/2 after:h-full after:w-0 after:bg-black after:opacity-5 after:transition-all after:duration-300 hover:before:w-1/2 hover:before:-left-1/2 hover:before:opacity-10 hover:after:w-1/2 hover:after:-right-1/2 hover:after:opacity-10">
                     Write a Review
                   </button>
+                </div>
+                <div className="">
+                  <Image
+                    alt="Image"
+                    loading="eager"
+                    width={222}
+                    height={162}
+                    className="w-full h-auto"
+                    src="/images/reviewImage.png"
+                  />
                 </div>
               </div>
             </div>
