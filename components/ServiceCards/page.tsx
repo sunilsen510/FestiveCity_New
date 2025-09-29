@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, li
           className="w-full object-cover min-h-[372px] rounded-[20px] ser_main_img"
           priority
         />
-        <div className="bg-black-linear rounded-[20px] w-[calc(100%-2px)] h-[calc(100%-2px)] absolute top-[1px] left-[1px] p-5 pr-10 flex flex-col justify-end flex-wrap transition-all duration-300 ease-in-out">
+        <div className="bg-black-linear rounded-[20px] w-[calc(100%-2px)] h-[calc(100%-2px)] text-start absolute top-[1px] left-[1px] p-5 pr-20 flex flex-col justify-end flex-wrap transition-all duration-300 ease-in-out">
           <h6 className="font-bold text-white leading-[24px] mb-1 transition-all duration-300 ease-in-out">
             {title}
           </h6>

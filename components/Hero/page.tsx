@@ -90,32 +90,6 @@ const Hero = () => {
             />
           </Link>
         </div>
-
-        {/* WhatsApp Icon with Animated Rings */}
-        <div className="relative w-full h-full">
-          <Link href="/" className="absolute bottom-8 right-8 z-[50]">
-            <div className="relative w-[82px] h-[82px] flex items-center justify-center">
-              {/* Outer Ring */}
-              <div className="absolute w-[74px] h-[74px] rounded-full p-[4px] bg-[linear-gradient(90deg,rgba(251,192,21,1)_0%,rgba(230,114,37,1)_100%)] animate-ping opacity-50">
-                <div className="w-full h-full bg-transparent rounded-full"></div>
-              </div>
-
-              {/* Inner Ring */}
-              <div className="absolute w-[68px] h-[68px] rounded-full p-[3px] animate-pulse opacity-70">
-                <div className="w-full h-full bg-transparent rounded-full"></div>
-              </div>
-
-              {/* WhatsApp Icon */}
-              <Image
-                src="/images/whatsApps.png"
-                alt="whatsapp"
-                width={82}
-                height={82}
-                className="w-[82px] h-[82px] z-10"
-              />
-            </div>
-          </Link>
-        </div>
       </div>
     </section>
   );
