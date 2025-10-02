@@ -60,6 +60,9 @@ module.exports = {
         'spin-slow': 'spin 3s linear infinite',
         'float': 'float 3s ease-in-out infinite', 
       },
+      willChange: {
+        transform: 'transform',
+      },
     },
   },
   plugins: [],

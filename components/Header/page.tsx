@@ -140,7 +140,7 @@ const Header = () => {
                 <Link
                   key={link.id}
                   href={link.href}
-                  className="text-white hover:text-yellow-color transition-colors duration-300"
+                  className="relative text-white hover:text-yellow-color transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-6px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:rounded-[10px] after:bg-yellow-color after:transition-all after:duration-300 hover:after:w-[26px]"
                 >
                   {link.label}
                 </Link>

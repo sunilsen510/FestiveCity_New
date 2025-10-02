@@ -96,10 +96,10 @@ const SwipperSlider = () => {
           spaceBetween={20}
           slidesPerView={3}
           loop={true} // infinite loop
-          autoplay={{
-            delay: 0, // no delay between slides
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 0, // no delay between slides
+          //   disableOnInteraction: false,
+          // }}
           speed={3000} // slide speed (ms)
           breakpoints={{
           320: { slidesPerView: 1 },

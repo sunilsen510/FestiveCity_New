@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import AnimatedText from "../AnimatedText/page";
 
 const Footer = () => {
   // Animation Variants
@@ -57,10 +58,10 @@ const Footer = () => {
                     src="/logo.svg"
                   />
                   <p className="text-gray-neutral-50 text-sm leading-[20px] my-[30px]">
-                    Festival City is an event rentals and event management
+                    <AnimatedText text="Festival City is an event rentals and event management
                     company based in Jeddah, KSA, specializing in lighting,
                     sound, stage setups, special effects, and full-scale event
-                    planning. We serve in you any location within KSA.
+                    planning. We serve in you any location within KSA." />
                   </p>
 
                   <div>
@@ -204,12 +205,13 @@ const Footer = () => {
                 >
                   <div className="bg-secondary-700 rounded-[20px] px-5 pt-5 overflow-hidden">
                     <h5 className="text-xl leading-6 text-gray-neutral-50 font-bold mb-2.5">
-                      Share Your Experience
+                      <AnimatedText text="Share Your Experience" />
                     </h5>
                     <p className="text-gray-neutral-50 text-sm leading-5 mb-5">
-                      We would love to hear from you! Help us improve by sharing
+                      <AnimatedText text=" We would love to hear from you! Help us improve by sharing
                       your feedback about our partners, events, or your overall
-                      experience.
+                      experience." 
+                      />
                     </p>
                     <button className="bg-transparent text-yellow-color leading-[22px] font-normal rounded-lg py-2.5 px-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 relative overflow-hidden">
                       Write a Review

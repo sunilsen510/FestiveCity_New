@@ -6,6 +6,7 @@ import ServiceCards from "../ServiceCards/page";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import AnimatedText  from "../AnimatedText/page";
 
 type CardData = {
   id: number;
@@ -129,21 +130,45 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
               )}
 
               {/* Title */}
-              <motion.h2
+              {/* <motion.h2
                 variants={titleVariant}
                 className="text-[28px] sm:text-[40px] md:text-[55px] lg:text-[65px] mt-3 font-bold text-white text-center leading-snug sm:leading-tight md:leading-none"
               >
                 <span className="text-yellow-color">{title} </span>
                 <span className="whitespace-pre-line">{subtitle}</span>
-              </motion.h2>
+              </motion.h2> */}
 
               {/* Description */}
-              <motion.p
+              {/* <motion.p
                 variants={descriptionVariant}
                 className="max-w-[90%] sm:max-w-[600px] md:max-w-[969px] text-[14px] sm:text-[16px] md:text-[18px] font-normal text-white leading-6 sm:leading-7 text-center mt-2 sm:mt-4"
               >
                 {description ?? "Festival City caters for all your festive occasion with a complete line up of state-of-the-art lighting, sound stage, LED, and effects. All for very reasonable prices."}
-              </motion.p>
+              </motion.p> */}
+
+              {/* Title + Subtitle */}
+            <motion.div variants={titleVariant} className="flex items-center justify-center text-center">
+              <AnimatedText
+                text={title as string} // cast to string if needed
+                className="text-[28px] sm:text-[40px] md:text-[55px] lg:text-[65px] font-bold text-yellow-color leading-snug sm:leading-tight md:leading-none"
+              />
+
+              <AnimatedText
+                text={subtitle as string}
+                className="text-[28px] sm:text-[40px] md:text-[55px] lg:text-[65px] font-bold text-white leading-snug sm:leading-tight md:leading-none"
+              />
+            </motion.div>
+
+            {/* Description */}
+            <motion.div variants={descriptionVariant} className="mt-2 sm:mt-4 text-center">
+              <AnimatedText
+                text={
+                  description ??
+                  "Festival City caters for all your festive occasion with a complete line up of state-of-the-art lighting, sound stage, LED, and effects. All for very reasonable prices."
+                }
+                className="max-w-[90%] sm:max-w-[600px] md:max-w-[969px] text-[14px] sm:text-[16px] md:text-[18px] font-normal text-white leading-6 sm:leading-7 md:leading-7 mx-auto"
+              />
+            </motion.div>
 
               {/* Cards */}
               <motion.div
