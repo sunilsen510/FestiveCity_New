@@ -151,17 +151,66 @@ html[lang="ar"] body{
   inset: 0; /* cover full element */
   padding: 1px; /* thickness of border */
   border-radius: 10px;
-  background: linear-gradient(90deg, rgba(251,192,21,1) 0%, rgba(230,114,37,1) 100%);
+  /* background: linear-gradient(90deg, rgba(251,192,21,1) 0%, rgba(230,114,37,1) 100%); */
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
-  pointer-events: none;
+  pointer-events: none; 
   z-index: 1;
 }
 
 .border-white-default:hover {
-  box-shadow: 0 4px 12px rgba(251, 192, 21, 0.5),
-              0 2px 6px rgba(230, 114, 37, 0.5);
+   box-shadow: 0 6px 8px rgba(251, 192, 21, 0.5), 0 3px 4px rgba(230, 114, 37, 0.5);
+}
+/* responsive  */
+
+/* 501px - 639px */
+@media screen and (min-width: 501px) and (max-width: 639px) {
+  .angle_shape_img {
+    width: calc(20% + 21px);
+  }
+}
+
+/* 401px - 500px */
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  .angle_shape_img {
+    width: calc(20% + 14px);
+  }
+}
+
+/* up to 400px */
+@media screen and (max-width: 400px) {
+  .angle_shape_img {
+    width: calc(20% + 14px);
+  }
+}
+
+
+.li-diamond {
+  position: relative; /* pseudo-element ke liye required */
+  overflow: visible;  /* pseudo-element visible rahe */
+}
+
+.li-diamond::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #FFC700;
+  position: absolute;
+  bottom: -5px; /* li ke upar */
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* square */
+  border-radius: 2px;
+  border: 2px solid #FFC700; /* border */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* shadow */
+  opacity: 0; /* initially hidden */
+  transition: all 0.3s ease; /* smooth animation */
+}
+
+/* Hover effect */
+.li-diamond:hover::after {
+  opacity: 1; /* show on hover */
+  transform: translateX(-50%) rotate(45deg) scale(1.2); /* thoda enlarge on hover */
 }

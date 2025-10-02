@@ -101,6 +101,13 @@ const SwipperSlider = () => {
             disableOnInteraction: false,
           }}
           speed={3000} // slide speed (ms)
+          breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1.5 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 3 },
+        }}
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>

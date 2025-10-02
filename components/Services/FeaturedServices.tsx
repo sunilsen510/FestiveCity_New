@@ -1,4 +1,5 @@
-"use client";
+
+'use client';
 
 import React from "react";
 import ServiceCards from "../ServiceCards/page";
@@ -41,7 +42,6 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
   showVideo = true,
   description,
 }) => {
-  // Framer Motion Variants
   const containerVariant: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
@@ -67,13 +67,13 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
       {useSection && (
         <div
           className={`
-            relative py-[100px] w-full h-auto overflow-hidden
+            relative pt-0 lg:py-[80px] sm:py-[90px] md:py-[100px] w-full h-auto overflow-hidden
             ${showBackground ? "" : ""} bg-cover bg-no-repeat bg-center
             ${removeBg}
             ${showDecorations ? 
-              `before:content-[''] before:absolute before:top-[15%] before:left-0 before:w-[221px] before:h-[205px] 
+              `before:content-[''] before:absolute before:top-[10%] sm:before:top-[15%] before:left-0 before:w-[150px] sm:before:w-[221px] before:h-[140px] sm:before:h-[205px] 
                before:bg-[url('/images/Confettis.png')] before:bg-no-repeat before:bg-contain before:animate-float
-               after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-[202px] after:h-[188px] 
+               after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-[150px] sm:after:w-[202px] after:h-[140px] sm:after:h-[188px] 
                after:bg-[url('/images/Confetti-up.png')] after:bg-no-repeat after:bg-right after:bg-contain after:animate-float`
               : ""
             }
@@ -96,9 +96,10 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
             </>
           )}
 
-          <div className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-8 text-center">
+          <div className="relative z-10 max-w-1296 mx-auto w-full flex flex-col items-center justify-center gap-6 sm:gap-8 text-center px-4 lg:px-0">
+
             <motion.div
-              className="flex items-center justify-center w-full flex-col gap-5"
+              className="flex flex-col items-center justify-center gap-4 sm:gap-5 w-full pb-[45px] lg:pb-0 md:pb-0"
               variants={containerVariant}
               initial="hidden"
               whileInView="visible"
@@ -108,20 +109,20 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
               {showLabel && (
                 <motion.div
                   variants={itemVariant}
-                  className="max-w-[157px] cursor-pointer min-h-[44px] flex items-center justify-center gap-3 rounded-full px-5 py-3 bg-transparent text-yellow-color border border-primary"
+                  className="max-w-[140px] sm:max-w-[157px] cursor-pointer min-h-[40px] sm:min-h-[44px] flex items-center justify-center gap-2 sm:gap-3 rounded-full px-4 sm:px-5 py-2 sm:py-3 bg-transparent text-yellow-color border border-primary text-sm sm:text-[18px]"
                 >
                   <div className="flex items-center justify-center">
                     <Link href="/" className="inline-block bg-transparent rounded-full shadow-shadow-6">
                       <Image
                         src="/gif/o-unscreen.gif"
                         alt="handshakes"
-                        width={22}
-                        height={22}
-                        className="w-[22px] h-[22px]"
+                        width={20}
+                        height={20}
+                        className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]"
                       />
                     </Link>
                   </div>
-                  <span className="text-[18px] font-normal text-white leading-none text-center">
+                  <span className="text-sm sm:text-[18px] font-normal text-white leading-none text-center">
                     {label}
                   </span>
                 </motion.div>
@@ -130,7 +131,7 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
               {/* Title */}
               <motion.h2
                 variants={titleVariant}
-                className="text-[65px] mt-[10px] font-bold text-white text-center leading-none"
+                className="text-[28px] sm:text-[40px] md:text-[55px] lg:text-[65px] mt-3 font-bold text-white text-center leading-snug sm:leading-tight md:leading-none"
               >
                 <span className="text-yellow-color">{title} </span>
                 <span className="whitespace-pre-line">{subtitle}</span>
@@ -139,20 +140,20 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
               {/* Description */}
               <motion.p
                 variants={descriptionVariant}
-                className="max-w-[969px] text-[18px] font-normal text-white leading-7 text-center"
+                className="max-w-[90%] sm:max-w-[600px] md:max-w-[969px] text-[14px] sm:text-[16px] md:text-[18px] font-normal text-white leading-6 sm:leading-7 text-center mt-2 sm:mt-4"
               >
-                {description ?? "Festival City caters for all your festive occasion with a complete line up of sate of the art lighting, sound stage, LED, and effects. All for very reasonable prices."}
+                {description ?? "Festival City caters for all your festive occasion with a complete line up of state-of-the-art lighting, sound stage, LED, and effects. All for very reasonable prices."}
               </motion.p>
 
               {/* Cards */}
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mt-10 cursor-pointer"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10 cursor-pointer w-full"
                 variants={containerVariant}
               >
                 {cardData &&
                   cardData.length > 0 &&
                   cardData.map((card) => (
-                    <motion.div key={card.id} variants={itemVariant}>
+                    <motion.div key={card.id} variants={itemVariant} className="w-full">
                       <ServiceCards
                         title={card.title}
                         description={card.description}
@@ -164,10 +165,10 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
               </motion.div>
 
               {/* CTA Button */}
-              <motion.div variants={itemVariant} className="mt-16">
+              <motion.div variants={itemVariant} className="mt-10 sm:mt-16">
                 <Link
                   href="/partner"
-                  className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 rounded-lg transition-all duration-300"
+                  className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-lg text-sm sm:text-base md:text-[16px] transition-all duration-300"
                 >
                   View All
                 </Link>

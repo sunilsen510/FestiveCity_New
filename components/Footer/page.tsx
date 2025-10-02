@@ -34,7 +34,7 @@ const Footer = () => {
     <>
       <footer>
         {/* Middle Section */}
-        <div className="bg-[#020619] px-4 py-[70px]">
+        <div className="bg-[#020619] px-4 lg:py-[70px] py-0">
           <div className="max-w-1296 mx-auto w-full">
             <motion.div
               className="flex flex-wrap -mx-[15px] text-white gap-y-[30px]"
@@ -200,7 +200,7 @@ const Footer = () => {
                 {/* Share Experience */}
                 <motion.div
                   variants={fadeUp}
-                  className="md:flex-1 p-[1px] border-white hover:border-yellow-linear hover:shadow-md border-opacity-20 border-yellow-linear relative z-[1] mob-shadow-peach-custom sm:hover:shadow-peach-custom border rounded-[20px]"
+                  className="md:flex-1 p-[1px] border-primary hover:bg-transparent relative z-[1]  border rounded-[20px]"
                 >
                   <div className="bg-secondary-700 rounded-[20px] px-5 pt-5 overflow-hidden">
                     <h5 className="text-xl leading-6 text-gray-neutral-50 font-bold mb-2.5">
@@ -211,7 +211,7 @@ const Footer = () => {
                       your feedback about our partners, events, or your overall
                       experience.
                     </p>
-                    <button className="bg-transparent text-primary leading-[22px] font-normal rounded-lg py-2.5 px-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 relative overflow-hidden">
+                    <button className="bg-transparent text-yellow-color leading-[22px] font-normal rounded-lg py-2.5 px-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 relative overflow-hidden">
                       Write a Review
                     </button>
                   </div>
@@ -221,7 +221,7 @@ const Footer = () => {
                       loading="eager"
                       width={222}
                       height={162}
-                      className="w-full h-auto"
+                      className="w-full h-auto rounded-b-[20px]"
                       src="/images/reviewImage.png"
                     />
                   </div>
@@ -264,7 +264,7 @@ const Footer = () => {
       </footer>
 
       {/* WhatsApp Icon with Motion */}
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full hidden lg:block">
         <Link href="/" className="bottom-[64px] right-[64px] z-[50] fixed">
           <div className="relative w-[82px] h-[82px] flex items-center justify-center">
             {/* Outer Ring */}
