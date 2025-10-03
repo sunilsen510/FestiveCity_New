@@ -64,8 +64,8 @@
 "use client";
 
 import React from 'react';
-import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import AnimatedButton from "../AnimatedButton/page";
 
 
 // Framer Motion Variants
@@ -110,12 +110,8 @@ const Network: React.FC = () => {
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <Link
-          href="/partner"
-          className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base md:text-[16px] transition-all duration-300"
-        >
-          Register as a Partner
-        </Link>
+        {/* Auth Buttons */}
+            <AnimatedButton href="/Join as a Partner">Join as a Partner</AnimatedButton> 
       </motion.div>
     </motion.div>
   );

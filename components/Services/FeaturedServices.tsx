@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import AnimatedText  from "../AnimatedText/page";
+import AnimatedButton from "../AnimatedButton/page";
+
 
 type CardData = {
   id: number;
@@ -73,7 +75,7 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
             ${removeBg}
             ${showDecorations ? 
               `before:content-[''] before:absolute before:top-[10%] sm:before:top-[15%] before:left-0 before:w-[150px] sm:before:w-[221px] before:h-[140px] sm:before:h-[205px] 
-               before:bg-[url('/images/Confettis.png')] before:bg-no-repeat before:bg-contain before:animate-float
+               before:bg-[url('/images/Confettis.png')] before:bg-no-repeat before:bg-contain before:animate-float before:z-50
                after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-[150px] sm:after:w-[202px] after:h-[140px] sm:after:h-[188px] 
                after:bg-[url('/images/Confetti-up.png')] after:bg-no-repeat after:bg-right after:bg-contain after:animate-float`
               : ""
@@ -191,12 +193,7 @@ const FeaturedServices: React.FC<FeaturedServicesProps> = ({
 
               {/* CTA Button */}
               <motion.div variants={itemVariant} className="mt-10 sm:mt-16">
-                <Link
-                  href="/partner"
-                  className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-lg text-sm sm:text-base md:text-[16px] transition-all duration-300"
-                >
-                  View All
-                </Link>
+                 <AnimatedButton href="/partner" className="mt-[40px] mb-[60px] bg-yellow-light-linear">View All</AnimatedButton>
               </motion.div>
             </motion.div>
           </div>

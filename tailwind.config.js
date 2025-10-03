@@ -40,7 +40,9 @@ module.exports = {
         'shadow-4': '0px 0px 0px 4px rgba(255, 255, 255, 0.4)',
         'shadow-5': '0px 8px 32px 0px rgba(0, 0, 0, 0.06), 0px 4px 8px 0px rgba(0, 0, 0, 0.03)',
         'shadow-6': '0px 3.28px 13.11px 0px rgba(251, 192, 21, 0.3)',
-  
+        'yellow-glow': '0px 3.28px 13.11px 0px #FBC0154D',
+        'yellow-custom': '0px 4px 10.8px 0px #FBC0154D',
+        'yellow-soft-custom': '0px 4px 10.8px 0px #FBC01580',
       },
       backgroundImage: {
         'hero-pattern': "url('/images/bg-hero.png')",
@@ -49,16 +51,23 @@ module.exports = {
         'black-linear': 'linear-gradient(0deg,rgba(3, 5, 17, 1) 0%, rgba(3, 5, 17, 0) 100%)',
         'yellow-linear': 'linear-gradient(90deg, rgba(251, 192, 21, 1) 0%, rgba(230, 114, 37, 1) 100%)',
         'ring-linear': 'linear-gradient(90deg, rgba(251, 192, 21, 1) 0%, rgba(230, 114, 37, 1) 100%)',
+        'yellow-light-linear': 'linear-gradient(90deg, rgba(251, 192, 21, 0.15) 0%, rgba(230, 114, 37, 0.15) 100%)',
+        'yellow-soft-linear': 'linear-gradient(90deg, rgba(251, 192, 21, 0.15) 0%, rgba(230, 114, 37, 0.15) 100%)',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' }, 
         },
+        downBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(20px)' },
+        },
       },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
         'float': 'float 3s ease-in-out infinite', 
+        'downBounce': 'downBounce 1s ease-in-out infinite',
       },
       willChange: {
         transform: 'transform',

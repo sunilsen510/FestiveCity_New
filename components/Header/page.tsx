@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedButton from "../AnimatedButton/page";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +85,7 @@ const Header = () => {
 
                   {/* Dropdown */}
                   <div
-                    className={`absolute mt-2 w-36 bg-secondary-700 shadow-lg overflow-hidden origin-top text-yellow-color border border-primary px-2 py-2 rounded-lg transition-all duration-300 ${
+                    className={`absolute mt-2 z-50 w-36 bg-secondary-700 shadow-lg overflow-hidden origin-top text-yellow-color border border-primary px-2 py-2 rounded-lg transition-all duration-300 ${
                       isDropOpen
                         ? "max-h-60 opacity-100 scale-100"
                         : "max-h-0 opacity-0 scale-95 pointer-events-none"
@@ -118,18 +119,8 @@ const Header = () => {
 
                 {/* Auth Buttons */}
                 <div className="flex gap-4">
-                  <Link
-                    href="/login"
-                    className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 rounded-lg transition-all duration-300"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/register"
-                    className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 rounded-lg transition-all duration-300"
-                  >
-                    Register
-                  </Link>
+                  <AnimatedButton href="/login" className="bg-yellow-soft-linear">Login</AnimatedButton>
+                  <AnimatedButton href="/register" className="bg-yellow-soft-linear">Register</AnimatedButton>
                 </div>
               </div>
             </div>
@@ -229,14 +220,14 @@ const Header = () => {
 
               <Link
                 href="/login"
-                className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 rounded-lg transition-all duration-300 text-center"
+                className="relative overflow-hidden px-4 py-2.5 rounded-lg text-yellow-color border border-primary bg-transparent transition-all duration-300 before:absolute before:inset-0 before:bg-yellow-linear before:translate-x-[-100%] before:transition-transform before:duration-300 before:shadow-lg hover:before:translate-x-0 hover:text-white"
                 onClick={toggleSidebar}
               >
                 Login
               </Link>
               <Link
                 href="/register"
-                className="bg-transparent text-yellow-color border border-primary hover:bg-yellow-linear hover:text-white px-4 py-2.5 rounded-lg transition-all duration-300 text-center"
+                className="relative overflow-hidden px-4 py-2.5 rounded-lg text-yellow-color border border-primary bg-transparent transition-all duration-300 before:absolute before:inset-0 before:bg-yellow-linear before:translate-x-[-100%] before:transition-transform before:duration-300 before:shadow-lg hover:before:translate-x-0 hover:text-white"
                 onClick={toggleSidebar}
               >
                 Register

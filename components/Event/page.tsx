@@ -244,7 +244,7 @@ const fadeUp: Variants = {
 const Event = () => {
   return (
     <>
-      <section className="relative w-full h-auto overflow-hidden">
+      <section className="relative bg-transparent w-full h-auto overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -258,10 +258,10 @@ const Event = () => {
         </video>
 
         {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[#040A1D] bg-opacity-50 z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[#040A1D] bg-opacity-90 z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center justify-center gap-8 text-center px-4 sm:px-6 lg:px-0">
+        <div className="relative bg-[#040A1D] h-[805px] bg-opacity-90 z-10  w-full flex flex-col items-center justify-center gap-8 text-center px-4 sm:px-6 lg:px-0">
           <motion.div
             className="flex items-center justify-center w-full flex-col gap-5"
             initial="hidden"
@@ -309,7 +309,8 @@ const Event = () => {
             </motion.div>
           </motion.div>
 
-          {/* Featured Services */}
+        </div>
+        {/* Featured Services */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -328,7 +329,6 @@ const Event = () => {
               showVideo={false}
             />
           </motion.div>
-        </div>
       </section>
 
       {/* Network Section */}
